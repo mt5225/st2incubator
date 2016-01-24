@@ -28,7 +28,7 @@ parameters:
     default: 'opsware_admin'
   hosts:
     immutable: true
-    default: '192.168.138.87'
+    default: '192.168.1.210'
   sudo:
     immutable: true
     default: false
