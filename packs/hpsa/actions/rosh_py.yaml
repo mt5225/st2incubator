@@ -20,7 +20,7 @@ parameters:
     required: true
     description: Command to be run by rosh
     position: 3
-  timeout:
+  connection_timeout:
     type: string
     required: true
     description: Connection timeout 
