@@ -1,5 +1,6 @@
 ### Place configuration data for your pack here.
 ---
   hpsa_hostname: 'localhost'
-  hpsa_admin_username: 'root'
-  hpsa_admin_password: 'root'
+  hpsa_admin_username: 'kknd'
+  hpsa_admin_password: 'kknd'
+  hpsa_ogfs_port: 22

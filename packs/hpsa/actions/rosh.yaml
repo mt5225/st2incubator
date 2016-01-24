@@ -20,18 +20,21 @@ parameters:
     required: true
     description: Command to be run by rosh
     position: 3
-  # username:
-  #   immutable: true
-  #   default: '{{hpsa_admin_username}}'
-  # password:
-  #   immutable: true
-  #   default: '{{hpsa_admin_password}}'
-  # hosts:
-  #   immutable: true
-  #   default: '{{hpsa_hostname}}'
+  username:
+    immutable: true
+    default: '{{hpsa_admin_username}}'
+  password:
+    immutable: true
+    default: '{{hpsa_admin_password}}'
+  hosts:
+    immutable: true
+    default: '{{hpsa_hostname}}'
   sudo:
-    immutable: false
+    immutable: true
     default: false
+  port:
+    immutable: false
+    default: {{hpsa_ogfs_port}}
   cmd:
     type: string
     default: 'echo {{target_hostname}} {{run_as_username}} {{run_command}}'
