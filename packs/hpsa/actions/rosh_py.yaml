@@ -21,5 +21,7 @@ parameters:
     description: Command to be run by rosh
     position: 3
   timeout:
+    type: integer
+    required: true
     default: 60
     immutable: false
