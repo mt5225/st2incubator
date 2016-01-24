@@ -20,3 +20,6 @@ parameters:
     required: true
     description: Command to be run by rosh
     position: 3
+  timeout:
+    default: 60
+    immutable: false

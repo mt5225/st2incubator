@@ -1,6 +1,7 @@
 ### Place configuration data for your pack here.
 ---
-    hpsa_admin_username: 'admin'
-    hpsa_admin_password: 'opsware_admin'
-    hpsa_host: '192.168.1.210'
-    hpsa_ogfs_port: 2222
+  hpsa:
+    admin_username: 'root'
+    admin_password: 'root'
+    ogfs_host: 'localhost'
+    ogfs_port: 22
