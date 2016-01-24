@@ -8,9 +8,8 @@ class RoshAction(Action):
     def __init__(self, config):
         super(RoshAction, self).__init__(config=config)
 
-    def run(self, **kargs):
-        print(kargs)
-        self.logger.info('Begin Action rosh')
+    def run(self, **kwargs):
+        self.logger.info(kwargs)
         #get hpsa info from configuration
         config = self.config['hpsa']
 
