@@ -18,7 +18,7 @@ class RoshAction(Action):
             port=int(config['ogfs_port']),
             username=config['admin_username'],
             password=config['admin_password'],
-            connect_timeout=kwargs['timeout'],
+            connect_timeout=int(kwargs['timeout']),
             missing_host_key=spur.ssh.MissingHostKey.accept
         )
         command = "echo rosh -n %s -l %s %s" % (kwargs['target_hostname'], kwargs['run_as_username'], kwargs['run_command'])
