@@ -1,7 +1,7 @@
 ---
 name: rosh
 description: run rosh command against one target server
-runner_type: run-remote
+runner_type: remote-shell-cmd
 enabled: true
 entry_point: ''
 parameters:
