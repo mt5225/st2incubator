@@ -1,5 +1,5 @@
 ### Place configuration data for your pack here.
 ---
-  hpsa_hostname: localhost
-  hpsa_admin_username: root
-  hpsa_admin_password: root
+  hpsa_hostname: 'localhost'
+  hpsa_admin_username: 'root'
+  hpsa_admin_password: 'root'

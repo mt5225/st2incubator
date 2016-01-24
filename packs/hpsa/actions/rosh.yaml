@@ -19,14 +19,14 @@ parameters:
     description: Command to be run by rosh
     position: 3
   username:
-    immutable: false
-    default: "{{hpsa_admin_username}}"
+    immutable: true
+    default: '{{hpsa_admin_username}}'
   password:
-    immutable: false
-    default: "{{hpsa_admin_password}}"
+    immutable: true
+    default: '{{hpsa_admin_password}}'
   hosts:
-    immutable: false
-    default: "{{hpsa_hostname}}"
+    immutable: true
+    default: '{{hpsa_hostname}}'
   sudo:
     immutable: false
     default: false
