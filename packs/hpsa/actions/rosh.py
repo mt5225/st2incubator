@@ -15,10 +15,10 @@ class RoshAction(Action):
         config = self.config['hpsa']
 
         shell = spur.SshShell(
-            hostname=config['admin_username'],
+            hostname=config['ogfs_host'],
             port=int(config['ogfs_port']),
-            username=config['username'],
-            password=config['password'],
+            username=config['admin_username'],
+            password=config['admin_password'],
             connect_timeout=kwargs['timeout'],
             missing_host_key=spur.ssh.MissingHostKey.accept
         )
