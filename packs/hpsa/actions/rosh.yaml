@@ -22,20 +22,20 @@ parameters:
     position: 3
   username:
     immutable: true
-    default: '{{config.hpsa_admin_username}}'
+    default: 'admin'
   password:
     immutable: true
-    default: 'kknd'
+    default: 'opsware_admin'
   hosts:
     immutable: true
-    default: 'localhost'
+    default: '192.168.138.87'
   sudo:
     immutable: true
     default: false
   port:
     immutable: true
-    default: 22
+    default: 2222
   cmd:
     type: string
-    default: 'echo rosh -h {{target_hostname}} -l {{run_as_username}} {{run_command}}'
+    default: 'rosh -n {{target_hostname}} -l {{run_as_username}} {{run_command}}'
     immutable: true
