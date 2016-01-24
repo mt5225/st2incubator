@@ -22,7 +22,7 @@ parameters:
     position: 3
   username:
     immutable: true
-    default: 'kknd'
+    default: '{{config.hpsa_admin_username}}'
   password:
     immutable: true
     default: 'kknd'
