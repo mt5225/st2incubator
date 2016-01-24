@@ -23,5 +23,6 @@ parameters:
   timeout:
     type: integer
     required: true
+    description: Connection timeout 
     default: 60
-    immutable: false
+    position: 3
