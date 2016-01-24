@@ -21,12 +21,14 @@ parameters:
     description: Command to be run by rosh
     position: 3
   username:
-    default: '{{hpsa_admin_username}}'
+    immutable: true
+    default: 'kknd'
   password:
-    default: '{{hpsa_admin_password}}'
+    immutable: true
+    default: 'kknd'
   hosts:
     immutable: true
-    default: '{{hpsa_hostname}}'
+    default: 'localhost'
   sudo:
     immutable: true
     default: false
@@ -35,5 +37,5 @@ parameters:
     default: 22
   cmd:
     type: string
-    default: 'echo {{target_hostname}} {{run_as_username}} {{run_command}}'
+    default: 'echo rosh -h {{target_hostname}} -l {{run_as_username}} {{run_command}}'
     immutable: true
