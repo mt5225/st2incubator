@@ -1,8 +1,8 @@
 ### Place information about your pack version here.
 ---
-name: debian
-description: Actions specific to the Debian/Ubuntu family of OSes
+name: hpsa
+description: Actions specific to the Opsware HPSA
 version: 0.0.1
-author: James Fryman
-email: james@fryman.io
+author: Jerry Jiang
+email: jerry@uinova.com
 
