@@ -20,13 +20,16 @@ parameters:
     position: 3
   username:
     immutable: false
-    default: '{{hpsa_admin_username}}'
-  pasword:
+    default: "{{hpsa_admin_username}}"
+  password:
     immutable: false
-    default: '{{hpsa_admin_password}}'
+    default: "{{hpsa_admin_password}}"
   hosts:
     immutable: false
-    default: '{{hpsa_hostname}}'
+    default: "{{hpsa_hostname}}"
+  sudo:
+    immutable: false
+    default: false
   cmd:
     type: string
     default: 'echo {{target_hostname}} {{run_as_username}} {{run_command}}'
