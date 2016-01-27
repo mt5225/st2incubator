@@ -21,7 +21,7 @@ parameters:
     description: Command to be run by rosh
     position: 3
   connection_timeout:
-    type: string
+    type: integer
     required: true
     description: Connection timeout 
     default: 60
