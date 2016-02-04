@@ -1,5 +1,8 @@
-author: jerry
-description: ''
-email: jerry@uinnova
+### Place information about your pack version here.
+---
 name: lab
-version: '0.1'
+description: Action Chain Lab
+version: 0.0.1
+author: Jerry Jiang
+email: jerry@uinova.com
+
