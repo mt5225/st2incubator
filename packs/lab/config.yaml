@@ -1,1 +1,7 @@
+### Place configuration data for your pack here.
 ---
+  hpsa:
+    admin_username: 'root'
+    admin_password: 'root'
+    ogfs_host: 'localhost'
+    ogfs_port: 22

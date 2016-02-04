@@ -1,7 +1,7 @@
 ### Place information about your pack version here.
 ---
 name: lab
-description: Action Chain Lab
+description: Actions specific to action chain
 version: 0.0.1
 author: Jerry Jiang
 email: jerry@uinova.com
