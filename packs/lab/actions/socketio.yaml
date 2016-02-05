@@ -1,0 +1,12 @@
+---
+name: rosh_py
+description: run rosh command against one target server using python
+runner_type: python-script
+enabled: true
+entry_point: 'socketio_post.py'
+parameters:
+  socketio_message:
+    type: string
+    description: Socket.IO Message
+    required: true
+    position: 1
