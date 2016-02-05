@@ -8,7 +8,7 @@
             on-success: "c2"
             on-failure: "c4"
             notify:
-                on-success:
+                on_success:
                     routes:
                       - socketio
                     message: "[start] {{start.stdout}} is started"
@@ -28,7 +28,7 @@
                 cmd: "uname -a"
             on-failure: "c4"
             notify:
-                on-success:
+                on_success:
                     routes:
                       - slack
                     message: "{{execution_id}} {{c3.stdout}}"
