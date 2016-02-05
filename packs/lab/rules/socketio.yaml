@@ -1,0 +1,17 @@
+---
+name: "notify_socketio"
+pack: "lab"
+description: "notify task status via socket.io"
+enabled: true
+
+trigger:
+  type: "core.st2.generic.notifytrigger"
+  parameters: {}
+criteria:
+  trigger.channel:
+    pattern: "socketio"
+    type: "equals"
+action:
+  ref: "lab.socketio_post"
+  parameters:
+    message: "socketio msg = {{trigger.message}}"

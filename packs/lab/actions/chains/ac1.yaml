@@ -1,28 +1,35 @@
 ---
     chain:
         -
-            name: "c1"
+            name: "start"
             ref: "core.local"
             parameters:
-                cmd: "echo c1"
+                cmd: "echo {{action_context.parent.execution_id}}"
             on-success: "c2"
             on-failure: "c4"
+            notify:
+                on-success:
+                    routes:
+                        - socketio
+                    message: "[start] {{start.stdout}} is started"
+            publish:
+                execution_id: "{{action_context.parent.execution_id}}"
         -
             name: "c2"
             ref: "core.local"
             parameters:
-                cmd: "echo \"c2: parent exec is {{action_context.parent.execution_id}}.\""
+                cmd: "df -h"
             on-success: "c3"
             on-failure: "c4"
         -
             name: "c3"
             ref: "core.local"
             parameters:
-                cmd: "echo c3"
+                cmd: "uname -a"
             on-failure: "c4"
         -
             name: "c4"
             ref: "core.local"
             parameters:
                 cmd: "echo fail c4"
-    default: "c1"
+    default: "start"
