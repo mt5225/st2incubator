@@ -9,9 +9,9 @@
             on-failure: "c4"
             notify:
                 on-success:
-                    message: "[socketio][lab.ac1]: Action started."
                     routes:
-                        - "socketio"                  
+                        - "socketio"
+                    message: "[start] {{start.stdout}} is started"
             publish:
                 execution_id: "{{start.stdout}}"
         -
