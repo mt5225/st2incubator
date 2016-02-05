@@ -1,7 +1,7 @@
 ---
 # Action definition metadata
-name: "ac1"
-description: "Simple Action Chain workflow"
+name: "chain001"
+description: "chain001 Simple Action Chain workflow"
 
 # `runner_type` has value `action-chain` to identify that action is an ActionChain.
 runner_type: "action-chain"
