@@ -16,7 +16,9 @@ class PostMessageAction(Action):
         message = kwargs['socketio_message']
 
         #send message to socketio server
-        with SocketIO('localhost', 3000, LoggingNamespace) as socketIO:
-            socketIO.emit(config['topic'], message)
-
-        return
+        try:
+            with SocketIO('localhost', 3000, LoggingNamespace) as socketIO:
+                socketIO.emit(config['topic'], message)
+            return "socket.io message sent success"
+        except Exception, e:
+            raise e

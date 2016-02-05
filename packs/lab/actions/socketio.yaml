@@ -1,5 +1,5 @@
 ---
-name: rosh_py
+name: socketio_post
 description: run rosh command against one target server using python
 runner_type: python-script
 enabled: true
