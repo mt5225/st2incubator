@@ -8,10 +8,10 @@
             on-success: "c2"
             on-failure: "c4"
             notify:
-                on-success:
-                    message: "[start] {{start.stdout}} is started"
+                on-complete:
+                    message: "[socketio][lab.ac1]: Action started."
                     routes:
-                        - "socketio"                    
+                        - "socketio"                  
             publish:
                 execution_id: "{{start.stdout}}"
         -
