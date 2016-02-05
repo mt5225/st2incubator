@@ -15,8 +15,8 @@ enabled: true
 #   skip_notify:
 #     default:
 #       - c2
-# # notify:
-#   on-complete:
-#     message: "[socketio][lab.ac1]: Action succeeded."
-#     routes:
-#       - "socketio"
+notify:
+  on-complete:
+    message: "[socketio][lab.ac1]: Action succeeded."
+    routes:
+      - "socketio"
