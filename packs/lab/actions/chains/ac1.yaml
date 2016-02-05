@@ -13,7 +13,7 @@
                         - socketio
                     message: "[start] {{start.stdout}} is started"
             publish:
-                execution_id: "{{action_context.parent.execution_id}}"
+                execution_id: "{{start.stdout}}"
         -
             name: "c2"
             ref: "core.local"
