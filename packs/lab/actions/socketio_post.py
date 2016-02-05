@@ -13,7 +13,7 @@ class PostMessageAction(Action):
         config = self.config['socketio']
 
         # get message from parameter
-        message = kwargs['socketio_message']
+        message = kwargs['message']
 
         #send message to socketio server
         try:

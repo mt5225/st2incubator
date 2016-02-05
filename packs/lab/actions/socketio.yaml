@@ -1,12 +1,12 @@
 ---
 name: socketio_post
-description: run rosh command against one target server using python
+description: post message to socket.io server
 runner_type: python-script
 enabled: true
 entry_point: 'socketio_post.py'
 parameters:
-  socketio_message:
-    type: string
-    description: Socket.IO Message
-    required: true
-    position: 1
+    message:
+        type: string
+        description: Socket.IO Message
+        required: true
+        position: 1
