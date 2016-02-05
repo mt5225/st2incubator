@@ -10,7 +10,7 @@
             notify:
                 on-success:
                     routes:
-                      - "socketio"
+                      - socketio
                     message: "[start] {{start.stdout}} is started"
             publish:
                 execution_id: "{{start.stdout}}"
@@ -27,6 +27,11 @@
             parameters:
                 cmd: "uname -a"
             on-failure: "c4"
+            notify:
+                on-success:
+                    routes:
+                      - slack
+                    message: "{{execution_id}} {{c3.stdout}}"
         -
             name: "c4"
             ref: "core.local"
