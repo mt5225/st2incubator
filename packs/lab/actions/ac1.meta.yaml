@@ -16,6 +16,6 @@ parameters:
       - c2
 notify:
   on-complete:
-    message: "[lab.ac1]: Action succeeded."
+    message: "[socketio][lab.ac1]: Action succeeded."
     routes:
-      - "slack"
+      - "socketio"
