@@ -10,7 +10,7 @@
             notify:
                 on-success:
                     routes:
-                        - "socketio"
+                      - "socketio"
                     message: "[start] {{start.stdout}} is started"
             publish:
                 execution_id: "{{start.stdout}}"

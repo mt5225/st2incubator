@@ -10,11 +10,12 @@ runner_type: "action-chain"
 entry_point: "chains/ac1.yaml"
 
 enabled: true
-parameters:
-  skip_notify:
-    default:
-      - c2
-# notify:
+
+# parameters:
+#   skip_notify:
+#     default:
+#       - c2
+# # notify:
 #   on-complete:
 #     message: "[socketio][lab.ac1]: Action succeeded."
 #     routes:
