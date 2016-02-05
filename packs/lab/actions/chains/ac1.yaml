@@ -4,9 +4,7 @@
             name: "start"
             ref: "core.local"
             parameters:
-                cmd: "echo {{action_context.parent.execution_id}}"
-            on-success: "c2"
-            on-failure: "c4"
+                cmd: "echo {{action_context.parent.execution_id}}"            
             notify:
                 on-success:
                     routes:
@@ -14,6 +12,8 @@
                     message: "[start] {{start.stdout}} is started"
             publish:
                 execution_id: "{{start.stdout}}"
+            on-success: "c2"
+            on-failure: "c4"
         -
             name: "c2"
             ref: "core.local"
