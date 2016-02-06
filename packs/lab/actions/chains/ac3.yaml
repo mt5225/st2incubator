@@ -1,0 +1,47 @@
+---
+    chain:
+        -
+            name: "start"
+            ref: "core.local"
+            parameters:
+                cmd: "echo {{action_context.parent.execution_id}}"            
+            notify:
+                on-success:
+                    routes:
+                      - socketio
+                    message: "[start] {{start.stdout}} is started"
+            publish:
+                execution_id: "{{start.stdout}}"
+                start_message: "[start] ac3 is started"
+            on-success: "start_notify"
+            on-failure: "c4"
+        -
+            name: "start_notify"
+            ref: "lab.socketio_post"
+            parameters:
+                message: "{{execution_id}} {{start_message}}"
+            on-success: "c2"
+        -
+            name: "c2"
+            ref: "core.local"
+            parameters:
+                cmd: "df -h"
+            on-success: "c3"
+            on-failure: "c4"
+        -
+            name: "c3"
+            ref: "core.local"
+            parameters:
+                cmd: "uname -a"
+            on-failure: "c4"
+            notify:
+                on-success:
+                    routes:
+                      - slack
+                    message: "{{execution_id}} {{c3.stdout}}"
+        -
+            name: "c4"
+            ref: "core.local"
+            parameters:
+                cmd: "echo fail c4"
+    default: "start"
