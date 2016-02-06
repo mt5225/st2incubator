@@ -1,25 +1,20 @@
 ---
     chain:
         -
-            name: "start"
+            name: "c1"
             ref: "core.local"
             parameters:
                 cmd: "echo {{action_context.parent.execution_id}}"            
-            notify:
-                on-success:
-                    routes:
-                      - socketio
-                    message: "[{{start.stdout}}] ac3 process is started"
             publish:
-                execution_id: "{{start.stdout}}"
-                start_message: "[start] flow ac3 is started"
-            on-success: "start_notify"
+                execution_id: "{{c1.stdout}}"
+                c1_message: "{{c1.stdout}}"
+            on-success: "c1_notify"
             on-failure: "c4"
         -
-            name: "start_notify"
+            name: "c1_notify"
             ref: "lab.socketio_post"
             parameters:
-                message: "[{{execution_id}}]->[{{action_context.execution_id}}] {{start_message}}"
+                message: "[{{execution_id}}]->[c1] {{c1_message}}"
             on-success: "c2"
         -
             name: "c2"
@@ -34,7 +29,7 @@
             name: "c2_notify"
             ref: "lab.socketio_post"
             parameters:
-                message: "[{{execution_id}}]->[{{action_context.execution_id}}] [c2] {{c2_message}}"
+                message: "[{{execution_id}}]->[c2] {{c2_message}}"
             on-success: "c3"
         -
             name: "c3"
@@ -49,10 +44,10 @@
             name: "c3_notify"
             ref: "lab.socketio_post"
             parameters:
-                message: "[{{execution_id}}]->[{{action_context.execution_id}}] [c3] {{c3_message}}"
+                message: "[{{execution_id}}]->[c3] {{c3_message}}"
         -
             name: "c4"
             ref: "core.local"
             parameters:
                 cmd: "echo fail c4"
-    default: "start"
+    default: "c1"
