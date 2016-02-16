@@ -21,7 +21,7 @@ class RoshAction(Action):
             connect_timeout=int(kwargs['connection_timeout']),
             missing_host_key=spur.ssh.MissingHostKey.accept
         )
-        command = "rosh -n %s -l %s %s" % (kwargs['target_hostname'], kwargs['run_as_username'], kwargs['run_command'])
+        command = "/opsw/bin/rosh -n %s -l %s %s" % (kwargs['target_hostname'], kwargs['run_as_username'], kwargs['run_command'])
         result = {}
         with shell:
             try:
